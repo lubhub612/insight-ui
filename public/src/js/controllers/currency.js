@@ -2,7 +2,7 @@
 
 angular.module('insight.currency').controller('CurrencyController',
   function($scope, $rootScope, Currency) {
-    $rootScope.currency.symbol = defaultCurrency;
+    $rootScope.currency.symbol = 'VCC';
 
     var _roundFloat = function(x, n) {
       if(!parseInt(n, 10) || !parseFloat(x)) n = 0;
@@ -24,7 +24,7 @@ angular.module('insight.currency').controller('CurrencyController',
         } else if (this.symbol === 'bits') {
           resSymbol = 'bits';
         } else {
-          resSymbol = this.realSymbol;
+          resSymbol = 'VCC';
         }
 
         if (value === 0.00000000) return '0 ' + resSymbol; // fix value to show
@@ -47,9 +47,9 @@ angular.module('insight.currency').controller('CurrencyController',
         if (response < 1e-7) response=response.toFixed(8);
 		
 		if (resSymbol === 'USD') {
-			return '$' + numeral(response).format('0,0.[00]') + ' ' + resSymbol;
+			return '$' + numeral(response).format('0,0.[00]') + ' ' + 'USD';
 		} else if (resSymbol === 'VCC'){
-			return numeral(response).format('0,0.00000000') + ' ' + resSymbol;
+			return numeral(response).format('0,0.00000000') + ' ' + 'VCC';
 		} else {
 			return response + ' ' + resSymbol;
 		}
