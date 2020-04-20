@@ -4,7 +4,7 @@ angular.module('insight')
   .constant('Constants', {
 
     CURRENCY: {
-      ZEL: 'ZEL',
+      VCC: 'VCC',
       USD: 'USD',
       BTC: 'BTC'
     },
@@ -14,7 +14,7 @@ angular.module('insight')
     CHART_DAYS: 14,
     NETWORK: window.current_network ? window.current_network : 'livenet',
     DEFAULT_LANGUAGE: localStorage.getItem('insight-language') || 'en',
-    DEFAULT_CURRENCY: localStorage.getItem('insight-currency') || 'ZEL'
+    DEFAULT_CURRENCY: localStorage.getItem('insight-currency') || 'VCC'
 
   });
 //Setting up route
@@ -22,7 +22,7 @@ angular.module('insight').config(function ($routeProvider) {
   $routeProvider.
     when('/block/:blockHash', {
       templateUrl: 'views/block.html',
-      title: 'ZelCash Block '
+      title: 'VCoin Block '
     }).
     when('/block-index/:blockHeight', {
       controller: 'BlocksController',
@@ -34,7 +34,7 @@ angular.module('insight').config(function ($routeProvider) {
     }).
     when('/tx/:txId/:v_type?/:v_index?', {
       templateUrl: 'views/transaction.html',
-      title: 'ZelCash Transaction '
+      title: 'VCoin Transaction '
     }).
     when('/', {
       templateUrl: 'views/index.html',
@@ -42,15 +42,15 @@ angular.module('insight').config(function ($routeProvider) {
     }).
     when('/blocks', {
       templateUrl: 'views/block_list.html',
-      title: 'ZelCash Blocks solved Today'
+      title: 'VCoin Blocks solved Today'
     }).
     when('/blocks-date/:blockDate/:startTimestamp?', {
       templateUrl: 'views/block_list.html',
-      title: 'ZelCash Blocks solved '
+      title: 'VCoin Blocks solved '
     }).
     when('/address/:addrStr', {
       templateUrl: 'views/address.html',
-      title: 'ZelCash Address '
+      title: 'VCoin Address '
     }).
     when('/charts', {
       templateUrl: 'views/charts.html',

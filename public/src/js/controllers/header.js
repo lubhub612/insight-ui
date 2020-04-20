@@ -6,9 +6,9 @@ angular.module('insight.system').controller('HeaderController',
 
     $rootScope.currency = {
       factor: 1,
-      symbol: 'ZEL',
-      realSymbol: 'ZEL',
-      netSymbol: 'ZEL'
+      symbol: 'VCC',
+      realSymbol: 'VCC',
+      netSymbol: 'VCC'
     };
 
     $scope.menu = [{
@@ -26,9 +26,6 @@ angular.module('insight.system').controller('HeaderController',
     }, {
       'title': 'Connections',
       'link': 'network'
-    }, {
-      'title': 'ZelNodes',
-      'link': 'zelnodes'
     }, {
       'title': 'Status',
       'link': 'status'
